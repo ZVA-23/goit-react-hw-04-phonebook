@@ -1,0 +1,31 @@
+.contactList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.btnList {
+    display: block;
+    width: 80px;
+    height: 20px;
+    cursor: pointer;
+        
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.btnList:hover {
+    background-color: grey;
+    color: whitesmoke;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.spanList {
+    font-weight: 700;
+}
+
+p {
+    margin-top: 0;
+}

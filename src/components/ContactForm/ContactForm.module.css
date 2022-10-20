@@ -1,0 +1,38 @@
+.spanForm {
+    font-weight: 700;
+}
+
+.inputForm {
+    width: 300px;
+    height: 30px;
+    margin: 5px 0;
+    padding-left: 10px;
+
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.inputForm:hover {
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.btnForm {
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin: 20px auto 30px;
+    cursor: pointer;
+
+
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.btnForm:hover {
+    background-color: grey;
+    color: whitesmoke;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
