@@ -1,40 +1,40 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 
-const INITIAL_STATE = {
-   name: "",
-   number: "",
-};
+export const ContactForm = ({ onSubmit }) => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
-export class ContactForm extends Component {
-state = { ...INITIAL_STATE };
-
-
-// Відповідає за оновлення стану
-handleChange = evt => {
+const handleChange = evt => {
     const { name, value } = evt.target;
-    this.setState({ [name]: value });
+  switch (name) {
+    case 'name':
+      setName(value);
+      break;
+    case 'number':
+      setNumber(value);
+      break;
+    default:
+      return;
+    }
 }
 
-// Викликається під час відправлення форми
-handleSubmit = evt => {
+const handleSubmit = evt => {
     evt.preventDefault();
-    const { name, number } = this.state;
-    console.log(`Name: ${name}, Number: ${number}`);
-    this.props.onSubmit(this.state);
-    this.reset();
-};
+    onSubmit({ name, number });
+    reset();
+}
 
-reset = () => {
-    this.setState({ ...INITIAL_STATE });
-};
-
-render() {
+  const reset = () => {
+    setName('');
+    setNumber('');
+  };
+  
   const nameInputId = nanoid();
   const numberInputId = nanoid();
-    const { state: { name, number }, handleSubmit, handleChange } = this;
+    
     return (
       <form onSubmit={handleSubmit}>
         <label htmlFor={nameInputId}>
@@ -74,7 +74,6 @@ render() {
         <button type="submit" className={css.btnForm}>Add contact</button>
       </form>
 );
-}
 }
 
 ContactForm.prototypes = {
